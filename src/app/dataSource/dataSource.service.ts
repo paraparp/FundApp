@@ -8,6 +8,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataSourceService {
+  static getProductos() {
+    throw new Error("Method not implemented.");
+  }
 
   producto1 = new Producto('1', 'IE00B03HCZ61', 'VANGLVI:ID', 'Vanguard Global Stock Index Fund', 'https://www.bloomberg.com/quote/VANGLVI:ID');
   producto2 = new Producto('2', 'IE0007987690', 'VANEIEI:ID', 'Vanguard European Stock Index Fund', 'https://www.bloomberg.com/quote/VANEIEI:ID');
@@ -22,6 +25,8 @@ export class DataSourceService {
   operacion3 = new Operacion('3', this.producto1, 46.450, 21.5280, 'EUR', 'MyInvestor', this.cartera1, new Date('2020-03-18'));
   operacion4 = new Operacion('4', this.producto2, 5.163, 145.2390, 'EUR', 'MyInvestor', this.cartera1, new Date('2020-03-13'));
   operacion5 = new Operacion('5', this.producto3, 7.300, 136.9574, 'EUR', 'MyInvestor', this.cartera1, new Date('2020-03-13'));
+
+
 
   constructor() {
   }

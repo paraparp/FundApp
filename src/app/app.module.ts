@@ -3,23 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { DataSourceService } from './dataSource/dataSource.service';
-import { WatchlistComponent } from './pages/watchlist/watchlist.component';
+
 import { APP_ROUTES } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule } from '@angular/material/table';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PagesModule } from './pages/pages.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    WatchlistComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTES,
     BrowserAnimationsModule,
-    MatTableModule,
-    NgbModule
+    NgbModule,
+    PagesModule
   ],
   providers: [DataSourceService],
   bootstrap: [AppComponent]
