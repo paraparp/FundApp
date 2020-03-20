@@ -6,7 +6,7 @@ import { DataSourceService } from './dataSource/dataSource.service';
 import { WatchlistComponent } from './pages/watchlist/watchlist.component';
 import { APP_ROUTES } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule } from '@angular/material';
+import { MatTableModule } from '@angular/material/table';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
