@@ -33,7 +33,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
-import { HeaderComponent } from './header/header.component';
+import { InplaceModule } from 'primeng/inplace';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 
 @NgModule({
@@ -71,7 +73,11 @@ import { HeaderComponent } from './header/header.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FlexLayoutModule
+
+
+
   ],
   exports: [
     MatAutocompleteModule,
@@ -107,7 +113,11 @@ import { HeaderComponent } from './header/header.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    InplaceModule,
+    FlexLayoutModule
+
+
   ],
   providers: [
   ],

@@ -8,9 +8,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataSourceService {
-  static getProductos() {
-    throw new Error("Method not implemented.");
-  }
+
 
   producto1 = new Producto('1', 'IE00B03HCZ61', 'VANGLVI:ID', 'Vanguard Global Stock Index Fund', 'https://www.bloomberg.com/quote/VANGLVI:ID');
   producto2 = new Producto('2', 'IE0007987690', 'VANEIEI:ID', 'Vanguard European Stock Index Fund', 'https://www.bloomberg.com/quote/VANEIEI:ID');
@@ -25,8 +23,9 @@ export class DataSourceService {
   operacion3 = new Operacion('3', this.producto1, 46.450, 21.5280, 'EUR', 'MyInvestor', this.cartera1, new Date('2020-03-18'));
   operacion4 = new Operacion('4', this.producto2, 5.163, 145.2390, 'EUR', 'MyInvestor', this.cartera1, new Date('2020-03-13'));
   operacion5 = new Operacion('5', this.producto3, 7.300, 136.9574, 'EUR', 'MyInvestor', this.cartera1, new Date('2020-03-13'));
+  operacion6 = new Operacion('6', this.producto1, 47.38, 21.105, 'EUR', 'MyInvestor', this.cartera1, new Date('2020-03-20'));
 
-
+  operacionesIsin: Operacion[] = [];
 
   constructor() {
   }
@@ -40,11 +39,25 @@ export class DataSourceService {
   }
 
   getCartera() {
-    return this.cartera1;
+    return [this.cartera1];
   }
 
   getOperaciones() {
-    return [this.operacion1, this.operacion2, this.operacion3, this.operacion4, this.operacion5]
+    return [this.operacion1, this.operacion2, this.operacion3, this.operacion4, this.operacion5, this.operacion6]
+  }
+
+  getOperacionesByIsin(isin: string) {
+
+    this.operacionesIsin = [];
+    this.getOperaciones().forEach(op => {
+
+      if (op.producto.isin === isin) {
+        this.operacionesIsin.push(op)
+      }
+
+    });
+
+    return this.operacionesIsin;
   }
 
 }

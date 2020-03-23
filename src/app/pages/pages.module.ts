@@ -1,11 +1,16 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 import { UserComponent } from './user/user.component';
 import { PagesComponent } from './pages.component';
-import { MaterialModule } from '../shared/material.module';
+
 import { PAGES_ROUTES } from './pages.routes';
 import { SharedModule } from '../shared/shared.module';
+import { MaterialModule } from '../shared/material/material.module';
+import { ProductosComponent } from './productos/productos.component';
+import { OperacionesComponent } from '../components/operaciones/operaciones.component';
+import { TablaComponent } from '../components/tabla/tabla.component';
+import { TablaProductosComponent } from '../components/tabla-productos/tabla-productos.component';
 
 
 
@@ -13,7 +18,11 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     WatchlistComponent,
     UserComponent,
-    PagesComponent
+    PagesComponent,
+    ProductosComponent,
+    OperacionesComponent,
+    TablaComponent,
+    TablaProductosComponent
   ],
   imports: [
     CommonModule,
@@ -21,6 +30,7 @@ import { SharedModule } from '../shared/shared.module';
     PAGES_ROUTES,
     SharedModule
   ],
-  exports: []
+  exports: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PagesModule { }

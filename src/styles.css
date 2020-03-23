@@ -1,47 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
-html, body {
-  height: 100%;
+.companyName {
+  font-size: 150%;
 }
 
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+div {
+  overflow: inherit;
 }
 
-#themecolors a {
-  cursor: pointer;
+a {
+  text-decoration: none;
+  font-size: 110%;
+  white-space: normal;
 }
 
-.pointer {
-  cursor: pointer;
+button {
+  font-size: 110%;
+  min-width: min-content;
 }
 
-.w150 {
-  width: 150px;
+.example-icon {
+  padding: 0 14px;
 }
 
-.w70 {
-  width: 70px;
+.example-spacer {
+  flex: 1 1 auto;
 }
 
-.img-35 {
-  width: 35px;
-}
-
-.oculto {
-  display: none;
-}
-
-.fondo-negro {
-  background-color: rgba(0, 0, 0, 0.4);
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-}
-
-.btn {
-  margin-right: 10px
+.mat-sidenav-content {
+  font-size: 200%;
 }
