@@ -10,15 +10,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PagesModule } from './pages/pages.module';
 
-import { TreeModule } from 'primeng/tree';
-import { TreeTableModule } from 'primeng/treetable';
-import { ProductosService } from './services/productos.service';
-import * as $ from "jquery";
 
 // importar locales
 import localePy from '@angular/common/locales/es-PY';
 
 import { registerLocaleData } from '@angular/common';
+
+import { ServiceModule } from './services/service.module';
 
 // registrar los locales con el nombre que quieras utilizar a la hora de proveer
 registerLocaleData(localePy, 'fr');
@@ -35,13 +33,15 @@ registerLocaleData(localePy, 'fr');
     APP_ROUTES,
     BrowserAnimationsModule,
     NgbModule,
-    PagesModule, TreeModule, TreeTableModule
-
-
+    PagesModule,
+    ServiceModule
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'fr' }, DataSourceService, ProductosService],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'fr' },
+    DataSourceService,
+  ],
   bootstrap: [AppComponent],
-  exports: [TreeModule, TreeTableModule]
+  exports: []
 
 })
 export class AppModule { }

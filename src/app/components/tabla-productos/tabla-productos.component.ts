@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataSourceService } from 'src/app/dataSource/dataSource.service';
 import { Cartera } from 'src/app/models/cartera.model';
 import { Operacion } from 'src/app/models/operacion.model';
 import { Producto } from 'src/app/models/producto.model';
 import { ProductosService } from 'src/app/services/productos.service';
+import { ImportXMLService } from 'src/app/services/import-xml.service';
 
 
 
@@ -18,7 +19,11 @@ export class TablaProductosComponent implements OnInit {
 
   //  @Input() public isin: string = '';
 
-  constructor(public data: DataSourceService, public productoService: ProductosService) { }
+  constructor(
+    public data: DataSourceService,
+    public productoService: ProductosService,
+    public importxml: ImportXMLService
+  ) { }
 
   displayedColumns = ['nombre', 'isin', 'codigoBl', 'participaciones', 'precio', 'precioActual', 'valor'];
 
@@ -31,35 +36,11 @@ export class TablaProductosComponent implements OnInit {
   ngOnInit() {
     this.cargarCartera();
     this.cargarProductos();
-  }
-
-  extraerPrecio(producto: Producto, valor: string) {
-    console.log(valor)
-
-    if (valor === 'precioActual') {
-
-      return this.extractDataFromUrl(producto.url, 'priceText__1853e8a5')
-    }
-    else {
-      return 0;
-    }
+    //  this.importxml.extraerPrecio(this.cargarProductos()[3], 'precioActual')
 
   }
 
 
-  extractDataFromUrl(url: string, classSpan: string) {
-
-    var req = new XMLHttpRequest();
-    req.open("GET", url, false);
-    // req.setRequestHeader('Access-Control-Allow-Origin', '*');
-    req.send(null);
-
-    var parser = new DOMParser();
-    var xmlDoc = parser.parseFromString(req.responseText, "text/html");
-    var res = xmlDoc.evaluate(`//span[@class="${classSpan}"]`, xmlDoc, null, XPathResult.STRING_TYPE, null);
-
-    return res.stringValue;
-  }
 
   cargarProductos() {
     return this.productos = this.data.getProductos();

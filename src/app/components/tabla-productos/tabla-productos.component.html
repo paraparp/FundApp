@@ -1,5 +1,37 @@
-<table mat-table [dataSource]="productos" class="mat-elevation-z8">
+<table class="table table-striped">
 
+  <tr>
+    <th></th>
+    <th></th>
+    <th>Bob</th>
+    <th>Alice</th>
+  </tr>
+  <tr>
+    <th rowspan="2">Favorite</th>
+    <th>Color</th>
+    <td>Blue</td>
+    <td>Purple</td>
+  </tr>
+  <tr>
+    <th>Flavor</th>
+    <td>Banana</td>
+    <td>Chocolate</td>
+  </tr>
+  <tr>
+    <th rowspan="2">Least Favorite</th>
+    <th>Color</th>
+    <td>Yellow</td>
+    <td>Pink</td>
+  </tr>
+  <tr>
+    <th>Flavor</th>
+    <td>Mint</td>
+    <td>Walnut</td>
+  </tr>
+</table>
+
+
+<!-- <table mat-table [dataSource]="productos" class="mat-elevation-z8">
 
   <ng-container matColumnDef="nombre">
     <th mat-header-cell *matHeaderCellDef> Nombre </th>
@@ -36,17 +68,17 @@
     <td mat-footer-cell *matFooterCellDef>{{getTotalValorCartera() | currency:"EUR":"symbol"}}</td>
   </ng-container>
 
-  precioActual
+
 
   <ng-container matColumnDef="precioActual">
     <th mat-header-cell *matHeaderCellDef> Precio Actual</th>
-    <td mat-cell *matCellDef="let prod"> {{ extraerPrecio(prod,'precioActual') | currency:"EUR":"symbol"}}</td>
+    <td mat-cell *matCellDef="let prod">
+      {{ extraerPrecio(prod,'precioActual') | currency:"EUR":"symbol"}}
+    </td>
     <td mat-footer-cell *matFooterCellDef>{{getTotalValorCartera() | currency:"EUR":"symbol"}}</td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
-</table>
-
-{{valorSpan}}
+</table> -->

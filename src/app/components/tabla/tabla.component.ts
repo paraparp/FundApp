@@ -6,11 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tabla.component.css']
 })
 export class TablaComponent implements OnInit {
-
-  constructor() { }
-
   ngOnInit(): void {
-  }
 
+  }
 
 }

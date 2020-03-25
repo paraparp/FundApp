@@ -11,6 +11,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { OperacionesComponent } from '../components/operaciones/operaciones.component';
 import { TablaComponent } from '../components/tabla/tabla.component';
 import { TablaProductosComponent } from '../components/tabla-productos/tabla-productos.component';
+import { TableModule } from 'primeng/table';
 
 
 
@@ -22,13 +23,16 @@ import { TablaProductosComponent } from '../components/tabla-productos/tabla-pro
     ProductosComponent,
     OperacionesComponent,
     TablaComponent,
-    TablaProductosComponent
+    TablaProductosComponent,
+
   ],
   imports: [
     CommonModule,
     MaterialModule,
     PAGES_ROUTES,
-    SharedModule
+    SharedModule,
+    TableModule,
+
   ],
   exports: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
